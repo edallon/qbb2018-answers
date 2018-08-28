@@ -13,8 +13,9 @@ for i, line in enumerate( inFile ) :
     if line.startswith("@"):
         continue
     fields = line.rstrip("\r\n").split("\t")
-    if fields[1] != "4":
-        align_count += 1
+    align_count += 1
+    #if fields[1] != "4":
+    #    align_count += 1
         
 print (align_count)
         
