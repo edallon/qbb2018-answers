@@ -13,8 +13,8 @@ for i, line in enumerate( inFile ) :
     if line.startswith("@"):
         continue
     fields = line.rstrip("\r\n").split("\t")
-    if fields[1] != "4":
-            if fields[14] == "XM:i:0":
-                nomismatch_count += 1
+    #if fields[1] != "4":
+    if "XM:i:0" in fields :
+        nomismatch_count += 1
    
 print (nomismatch_count)
