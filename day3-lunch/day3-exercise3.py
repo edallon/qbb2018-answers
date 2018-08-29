@@ -25,21 +25,14 @@ for line in inFile:
         type_index = biotype_index + 1
         if fields2[type_index] == '"protein_coding";':
             my_dist = 0
-            curr_min = 1000000000
             if find_pos < gene_start:
                 my_dist = gene_start - find_pos
                 dist_dict[my_dist] = fields2[name_index]
-                if my_dist < curr_min:
-                    curr_min = my_dist
             elif find_pos > gene_end:
                 my_dist = find_pos - gene_end
                 dist_dict[my_dist] = fields2[name_index]
-                if my_dist < curr_min:
-                    curr_min = my_dist
             else:
                 dist_dict[my_dist] = fields2[name_index]
-                if my_dist < curr_min:
-                    curr_min = my_dist
             
 
 dist_list = dist_dict.keys()
