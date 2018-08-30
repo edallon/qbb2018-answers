@@ -23,7 +23,7 @@ log_fpkm2 = np.log(fpkm2 + 1)
 fit1 = np.polyfit(log_fpkm1, log_fpkm2, 1)
 fit2 = np.poly1d(fit1)
 
-x_new = np.linspace(0, 9, 34000)
+x_new = np.linspace(0, 9, 100)
 y_new = fit2(x_new)
 
 fig, ax = plt.subplots()
@@ -32,7 +32,7 @@ ax.set_xlabel(name1)
 ax.set_ylabel(name2)
 ax.scatter(log_fpkm1, log_fpkm2, alpha=0.5)
 ax.plot(x_new, y_new, 'k-')
-fig.savefig("scatter7.png")
+fig.savefig("scatter8.png")
 plt.close(fig)
 
 # fig, ax = plt.subplots()
