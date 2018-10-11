@@ -1,0 +1,9 @@
+conda install plink
+
+gunzip BYxRM_segs_saccer3.bam.simplified.vcf.xz
+
+plink --vcf BYxRM_segs_saccer3.bam.simplified.vcf --pca 2 --allow-extra-chr --mind
+
+plink --vcf BYxRM_segs_saccer3.bam.simplified.vcf --freq --allow-extra-chr
+
+plink --vcf BYxRM_segs_saccer3.bam.simplified.vcf --pheno phenotypes.txt --assoc --all-pheno --allow-no-sex --allow-extra-chr
