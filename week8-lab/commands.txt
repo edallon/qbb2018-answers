@@ -1,0 +1,14 @@
+To get the right data set (ChIP-seq peaks)
+wget "https://raw.githubusercontent.com/bxlab/qbb2018/master/data/ER4_peaks.narrowPeak"
+
+conda install meme
+
+tar -xvzf motif_databases.12.18.tgz
+
+to get top 100 peaks:
+sort -nk 8 ER4_peaks.narrowPeak > ER4_peaks.sorted2
+tail -n 100 ER4_peaks.sorted2 > ER4_peaks.top100
+
+bedtools getfasta -name -fi chr19.fa -bed ER4_peaks.top100 > ER4_peaks.fasta
+
+meme-chip -meme-maxw 20 -db motif_databases/JASPAR/JASPAR_CORE_2016.meme ER4_peaks.fasta
