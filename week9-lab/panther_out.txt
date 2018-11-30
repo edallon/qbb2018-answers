@@ -1,0 +1,3 @@
+From the ontology, I would guess 2310046K01Rik plays a role in signal transduction.
+The literature says that the gene is a riboflavin transporter.
+Riboflavin is a vitamin that is important in a variety of cellular processes, so it seems like it would also be important in differentiation.
